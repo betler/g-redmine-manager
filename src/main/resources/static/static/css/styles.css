@@ -1,0 +1,67 @@
+:root {
+    --dark-primary: #4c5241;
+    --dark-primary-color: #f2facc; /* Color for dark-primary backgrounds */
+    --icon-color-light: #dcdcdc;
+    --icon-padding: 0.5rem;
+    --icon-size: 28px;
+    --main-logo-color: #f7b740;
+    --icon-color-light-hover: var(--dark-primary);
+
+    --modal-vertical-margin: 10vh;
+}
+
+.body {
+    font-family: 'Open Sans', Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    background-color: var(--dark-primary);
+}
+
+.main-logo {
+    color: var(--main-logo-color);
+}
+
+.navbar ul.icon-bar li a {
+    padding-left: var(--icon-padding);
+    padding-right: var(--icon-padding);
+    color: var(--icon-color-light);
+    font-size: var(--icon-size);
+}
+
+.navbar ul.icon-bar li a:hover {
+    color: var(--icon-color-light-hover);
+    background-color: var(--icon-color-light);
+    border-radius: 5px;
+}
+
+.form-group-small {
+    margin-bottom: 0px;
+}
+
+.form-control-small {
+    height: calc(1.5em + 2px);
+    padding: 0rem 0rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Modal windows */
+.modal-header {
+    background-color: var(--dark-primary);
+    color: var(--dark-primary-color);
+    padding-top: 0.5rem;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+/* / Modal windows */
+
+#projectsCombo {
+    min-width: 25rem;
+}
+
+#loginModal {
+    margin-top: var(--modal-vertical-margin);
+}

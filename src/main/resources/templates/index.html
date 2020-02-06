@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="betler@github">
+    <title>Dashboard Template · Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <!-- Fontawesome CSS-->
+    <link href="static/css/fa-all.min.css" rel="stylesheet">
+    <!-- SELECT 2-->
+    <link href="static/css/select2.min.css" rel="stylesheet">
+    <!-- Own CSS-->
+    <link href="static/css/styles.css" rel="stylesheet">
+
+    <meta name="theme-color" content="#563d7c">
+</head>
+
+<body>
+    <nav class="navbar fixed-top flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0 main-logo" href="#">g-redmine-js-manager</a>
+
+        <ul class="list-group list-group-horizontal list-unstyled icon-bar">
+            <li>
+                <a href="#"><i class="fab fa-fw fa-accessible-icon"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fab fa-fw fa-adn"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-fw fa-arrow-alt-circle-up"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fab fa-fw fa-accessible-icon"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fab fa-fw fa-adn"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-fw fa-arrow-alt-circle-up"></i></a>
+            </li>
+            <li>
+                <div class="form-group form-group-small ml-2">
+                    <select class="form-control form-control-small" id="projectsCombo" disabled>
+                    </select>
+                </div>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav px-3">
+            <li class="text-nowrap">
+                <a class="nav-link" href="#">Configure</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container-fluid pt-4">
+
+        <!-- Container fluid -->
+        <div class="row">
+            <main role="main" class="col-12">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group mr-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                            <span data-feather="calendar"></span>
+                            This week
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div><!-- Container fluid -->
+
+    <!-- Login modal -->
+    <div class="modal" tabindex="-1" role="dialog" id="loginModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">Configure your API Key</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group row">
+                            <label for="loginModalUrlInput" class="col-sm-4 col-form-label">URL Redmine</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="loginModalUrlInput">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="loginModalApiKeyInput" class="col-sm-4 col-form-label">API KEY</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="loginModalApiKeyInput">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="loginModalLoginBtn">Save</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="static/js/jquery-3.4.1.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/fa-all.min.js"></script>
+    <script src="static/js/select2.min.js"></script>
+    <script src="static/js/http-utils.js" type="module"></script>
+    <script src="static/js/g-redmine-js-client.js" type="module"></script>
+    <script src="static/js/script.js" type="module"></script>
+</body>
+
+</html>
