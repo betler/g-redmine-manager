@@ -16,6 +16,11 @@
  */
 package pro.cvitae.gredminemanager.redmine.client;
 
+import com.taskadapter.redmineapi.RedmineManager;
+import com.taskadapter.redmineapi.RedmineManagerFactory;
+
+import pro.cvitae.gredminemanager.redmine.client.utils.CheckConnection;
+
 /**
  * @author betler
  *
@@ -60,6 +65,7 @@ public class GRMClient {
 		private String user;
 		private String pass;
 		private String key;
+		private RedmineManager manager;
 
 		@Override
 		public AuthenticationType withUrl(final String url) {
@@ -91,6 +97,8 @@ public class GRMClient {
 
 	private final GRMClientBuilder builder;
 
+	private RedmineManager manager;
+
 	public GRMClient(final GRMClientBuilder builder) {
 		this.builder = builder;
 	}
@@ -110,13 +118,23 @@ public class GRMClient {
 	 *
 	 * @return
 	 */
+	@CheckConnection
 	public UserInfo connect() {
+		if (this.manager == null) {
+			if (this.builder.authType.equals(AuthenticationTypes.USER_PASS)) {
+				this.manager = RedmineManagerFactory.createWithUserAuth(this.builder.url, this.builder.user,
+						this.builder.pass);
+			} else if (this.builder.authType.equals(AuthenticationTypes.API_KEY)) {
+				this.manager = RedmineManagerFactory.createWithApiKey(this.builder.url, this.builder.key);
+			} else {
+				// Should not happen
+				throw new UnsupportedOperationException(
+						"This type of authentication is not supported. And it shouldn't exist, either.");
+			}
+		}
+
 		throw new UnsupportedOperationException("Not yet");
 		// return new UserInfo("jur");
 	}
 
-	public static void main(final String[] args) {
-		GRMClient.newClient().withUrl("URL").withApiKey("token").build();
-		GRMClient.newClient().withUrl("URL").withUserPass("user", "pass").build();
-	}
 }

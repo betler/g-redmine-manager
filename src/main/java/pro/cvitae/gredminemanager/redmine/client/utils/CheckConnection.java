@@ -13,24 +13,25 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  *
- */
-package pro.cvitae.gredminemanager;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
-
-/**
- *
  * @author betler
  *
  */
-@SpringBootApplication
-@EnableAspectJAutoProxy(proxyTargetClass = true)
-public class GRedmineManagerApplication {
+package pro.cvitae.gredminemanager.redmine.client.utils;
 
-	public static void main(final String[] args) {
-		SpringApplication.run(GRedmineManagerApplication.class, args);
-	}
+import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
+
+@Documented
+@Retention(RUNTIME)
+@Target(METHOD)
+/**
+ * @author mikel
+ *
+ */
+public @interface CheckConnection {
 
 }

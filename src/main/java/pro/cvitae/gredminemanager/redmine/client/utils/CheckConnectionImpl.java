@@ -14,23 +14,25 @@
  * the License.
  *
  */
-package pro.cvitae.gredminemanager;
+package pro.cvitae.gredminemanager.redmine.client.utils;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
 
 /**
- *
  * @author betler
  *
  */
-@SpringBootApplication
-@EnableAspectJAutoProxy(proxyTargetClass = true)
-public class GRedmineManagerApplication {
+@Aspect
+@Component
+public class CheckConnectionImpl {
 
-	public static void main(final String[] args) {
-		SpringApplication.run(GRedmineManagerApplication.class, args);
+	@Before(value = "execution(* pro.cvitae.gredminemanager.redmine.client.GRMClient.*(..))")
+	public void beforeAdvice(final JoinPoint joinPoint) {
+		System.out.println("Before method:" + joinPoint.getSignature());
+
+		System.out.println("Creating Employee with name");
 	}
-
 }
