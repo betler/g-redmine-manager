@@ -14,21 +14,17 @@
  * the License.
  *
  */
-package pro.cvitae.gredminemanager;
+package pro.cvitae.gredminemanager.redmine.client;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+public class UserInfo {
 
-/**
- *
- * @author betler
- *
- */
-@SpringBootApplication
-public class GRedmineManagerApplication {
+	final String user;
 
-	public static void main(final String[] args) {
-		SpringApplication.run(GRedmineManagerApplication.class, args);
+	public UserInfo(final String user) {
+		this.user = user;
 	}
 
+	public String getUser() {
+		return this.user;
+	}
 }
