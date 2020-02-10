@@ -19,6 +19,7 @@ package pro.cvitae.gredminemanager.web.index;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import pro.cvitae.gredminemanager.redmine.client.GRMClient;
 import pro.cvitae.gredminemanager.web.common.GRMGenericController;
 import pro.cvitae.gredminemanager.web.common.ViewNames;
 
@@ -32,6 +33,11 @@ public class MainController extends GRMGenericController {
 	 */
 	@GetMapping(ViewNames.INDEX_URL)
 	public String main() {
+
+		final GRMClient client = GRMClient.newClient().withUrl("JUR").withApiKey("jur").build();
+		client.BORRAME();
+		// client.connect();
+
 		return ViewNames.INDEX_VIEW;
 	}
 }

@@ -118,7 +118,6 @@ public class GRMClient {
 	 *
 	 * @return
 	 */
-	@CheckConnection
 	public UserInfo connect() {
 		if (this.manager == null) {
 			if (this.builder.authType.equals(AuthenticationTypes.USER_PASS)) {
@@ -135,6 +134,11 @@ public class GRMClient {
 
 		throw new UnsupportedOperationException("Not yet");
 		// return new UserInfo("jur");
+	}
+
+	@CheckConnection
+	public void BORRAME() {
+		System.out.println("JUR");
 	}
 
 }
